@@ -1,5 +1,5 @@
 ## A. 
-The tokens are stored in a hash map corresponding their respective qualifiers.
+The tokens are stored in a hash map corresponding to their respective qualifiers.
 
         public static HashMap<String, Integer> myMap = new HashMap<String, Integer>();
         myMap.put("LETTER", 0);                 // letters
