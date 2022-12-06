@@ -10,7 +10,7 @@
 - LOOPING -> HA_STMT | DURING_STMT
 - ADDMINUS -> $$ FACTOR { ( + | - | = ) FACTOR }
 - MULDIVMOD -> $$$ FACTOR { ( * | / | % ) FACTOR }
-- FACTOR -> id | int_lit | float_int | ( EXPR )
+- FACTOR -> id | int_lit | float_int 
 - END -> hahaha
 
 - HA_STMT -> ha ( BOOL_EXPR ) STMT [ lol STMT ]     
@@ -20,7 +20,7 @@
 - B_EQ -> [!]B_EXPR { ( == | != | <= | < | >= | > ) B_EXPR }
 - B_EXPR -> B_TERM { ( + | - ) B_TERM }
 - B_TERM -> B_FACT { ( * | / | % ) B_FACT }
-- B_FACT -> id | int_lit | float_int | ( EXPR )
+- B_FACT -> id | int_lit | float_int 
 
 ## Grammar Syntax Notation:
 - START: lecture BLOCK
@@ -30,7 +30,7 @@
 - LOOPING: HA_STMT | DURING_STMT
 - ADDMINUS -> `$$` FACTOR { ( + | - | = ) FACTOR }
 - MULDIVMOD -> `$$$` FACTOR { ( * | / | % ) FACTOR }
-- FACTOR -> `id` | `int_lit` | `float_int` | `(` EXPR `)`
+- FACTOR -> `id` | `int_lit` | `float_int` 
 - END -> hahaha
 
 - HA_STMT -> `ha` `(` BOOL_EXPR `)` STMT [ `lol` STMT ]     
@@ -40,7 +40,7 @@
 - B_EQ -> [`!`]B_EXPR { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) B_EXPR }
 - B_EXPR -> B_TERM { ( `+` | `-` ) B_TERM }
 - TERM -> NOT { ( `*` | `/` | `%` ) NOT }
-- B_FACT -> `id` | `int_lit` | `float_int` | `(` EXPR `)`
+- B_FACT -> `id` | `int_lit` | `float_int` 
 
 ## Legend: 
 ```
