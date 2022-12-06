@@ -1,3 +1,6 @@
+## A. 
+
+
 ## B. 
 ## Grammar Rules for the Language
 - START -> lecture BLOCK
