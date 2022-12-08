@@ -5,8 +5,8 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
         myMap.put("LETTER", 0);                 // letters
         myMap.put("DIGIT", 1);                  // any number
         myMap.put("UNKNOWN", 99);               // the unknown character
-        myMap.put("INT_FLOAT", 10);             // integers
-        myMap.put("FLOAT_INT", 11);             // floating point numbers
+        myMap.put("INT_LIT", 10);             // integers
+        myMap.put("FLOAT_LIT", 11);             // floating point numbers
         myMap.put("IDENT", 12);                 // identifiers
         myMap.put("ASSIGN_OP", 20);             // the assignment operation ( = )
         myMap.put("ADD_OP", 21);                // addition operator ( + )
