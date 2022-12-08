@@ -103,3 +103,6 @@ FIRST(DURING_STMT) -> {'DURING'}
 FIRST(BOOL_EXPR) -> {'!'} | {'id'} | {'digit'} | {'letter'}
 
 FIRST(END) -> {'hahaha'}
+## D.
+
+## E. 
