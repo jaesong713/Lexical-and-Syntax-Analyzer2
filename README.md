@@ -49,8 +49,7 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
 - HA_STMT -> 'ha' '(' BOOL_EXPR ')' STMT [ 'lol' STMT ]      ha = if stmt
 - DURING_STMT -> 'during' '(' BOOL_EXPR ')'  during = while stmt
 - BOOL_EXPR -> B_EQ
-- B_EQ -> [!]B_FACT { ( '==' | '!=' | '<=' | '<' | '>=' | '>' ) B_FACT }
-- B_FACT -> 'id' | 'digit' | 'letter'
+- B_EQ -> [!]IDENT { ( '==' | '!=' | '<=' | '<' | '>=' | '>' ) IDENT }
 - END -> 'hahaha'
 
 ## Grammar Syntax Notation:
@@ -66,8 +65,7 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
 - HA_STMT -> `ha` `(` BOOL_EXPR `)` STMT [ `lol` STMT ]     
 - DURING_STMT -> `during` `(` BOOL_EXPR `)` STMT                
 - BOOL_EXPR -> B_EQ    
-- B_EQ -> [`!`]B_FACT { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) B_FACT }
-- B_FACT -> `id` | `digit` | `letter` 
+- B_EQ -> [`!`]IDENT { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) IDENT }
 - END -> hahaha
 
 ## Legend: 
@@ -94,22 +92,14 @@ FIRST(ADDMINUS) -> {'$$'}
 
 FIRST(MULDIVMOD) -> {'$$$'}
 
-FIRST(IDENT) -> {'id'} | {'int_lit'} | {'float_int'} 
+FIRST(IDENT) -> {'id'} | {'digit'} | {'letter'} 
+
+FIRST(FACTOR) -> {'int_lit'} | {'float_lit'}
 
 FIRST(HA_STMT) -> {'HA'}
 
 FIRST(DURING_STMT) -> {'DURING'}
 
-FIRST(BOOL) -> {'('}}
+FIRST(BOOL_EXPR) -> {'!'} | {'id'} | {'digit'} | {'letter'}
 
-FIRST(AND) -> {'UHH'}
-
-FIRST(EQ) -> {'!=', '=='}
-
-FIRST(REL) -> {'>=', '>', '<='. '<'}
-
-FIRST(B_EXPR) -> {'+', '-'}
-
-FIRST(B_TERM) -> {'*', '/', '%'}
-
-FIRST(NOT) -> {'!'}
+FIRST(END) -> {'hahaha'}
