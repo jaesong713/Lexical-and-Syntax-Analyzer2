@@ -37,24 +37,21 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
 
 ## B. 
 ## Grammar Rules for the Language
-- START -> lecture BLOCK
-- BLOCK -> { STMT } $END
-- STMT -> ASSIGNMENT | LOOPING | ADDMINUS | MULDIVMOD
-- ASSIGNMENT -> $ FACTOR ;
+- START -> 'lecture' BLOCK
+- BLOCK -> '{' STMT '}' $END        $ indicating that the block should end with the end statement
+- STMT -> ASSIGNMENT| LOOPING | ADDMINUS | MULDIVMOD
+- ASSIGNMENT -> '$'FACTOR IDENT';'
 - LOOPING -> HA_STMT | DURING_STMT
-- ADDMINUS -> $$ FACTOR { ( + | - | = ) FACTOR }
-- MULDIVMOD -> $$$ FACTOR { ( * | / | % ) FACTOR }
-- FACTOR -> id | int_lit | float_int 
-- END -> hahaha
-
-- HA_STMT -> ha ( BOOL_EXPR ) STMT [ lol STMT ]     
-- DURING_STMT -> during ( BOOL_EXPR ) STMT                
-
-- BOOL_EXPR -> B_EQ      
-- B_EQ -> [!]B_EXPR { ( == | != | <= | < | >= | > ) B_EXPR }
-- B_EXPR -> B_TERM { ( + | - ) B_TERM }
-- B_TERM -> B_FACT { ( * | / | % ) B_FACT }
-- B_FACT -> id | int_lit | float_int 
+- ADDMINUS -> '$$' IDENT { (+ | - | =) IDENT } ';'
+- MULDIVMOD -> '$$$' IDENT { (* | / | %) IDENT } ';'
+- IDENT -> 'id' | 'digit' | 'letter'
+- FACTOR -> 'int_lit' | 'float_int'
+- HA_STMT -> 'ha' `(`<bool_expr> `)` <stmt> [ `lol` <stmt> ]      ha = if stmt
+- <during_stmt> -> 'during' '(' BOOL_EXPR ')'  during = while stmt
+- <bool_expr> -> <b_eq>
+- <b_eq> -> [!]<b_fact> { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) <b_fact> }
+- <b_fact> -> `id` | `digit` | `letter`
+- <end> -> `hahaha`
 
 ## Grammar Syntax Notation:
 - START: lecture BLOCK
@@ -85,3 +82,37 @@ ehh = or
 uhh = and
 `...` = (`) to indicate character literal to detect for each rule
 ```
+## C.
+FIRST(START) -> {'lecture'}
+
+FIRST(BLOCK) -> {'{'}
+
+FIRST(STMT) -> {'$'} | {'HA', 'DURING'} | {'$$'} | {$$$}
+
+FIRST(ASSIGNMENT) -> {'$'}
+
+FIRST(LOOPING) -> {'HA'} | {'DURING'}
+
+FIRST(ADDMINUS) -> {'$$'}
+
+FIRST(MULDIVMOD) -> {'$$$'}
+
+FIRST(IDENT) -> {'id'} | {'int_lit'} | {'float_int'} 
+
+FIRST(HA_STMT) -> {'HA'}
+
+FIRST(DURING_STMT) -> {'DURING'}
+
+FIRST(BOOL) -> {'('}}
+
+FIRST(AND) -> {'UHH'}
+
+FIRST(EQ) -> {'!=', '=='}
+
+FIRST(REL) -> {'>=', '>', '<='. '<'}
+
+FIRST(B_EXPR) -> {'+', '-'}
+
+FIRST(B_TERM) -> {'*', '/', '%'}
+
+FIRST(NOT) -> {'!'}
