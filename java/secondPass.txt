@@ -1,0 +1,14 @@
+lecture {
+$ger a;
+$ger x;
+$ger y;
+$ger z;
+$$x = 0;
+$$y = 1;
+$$z = x + y;
+ha (x == 1) {
+    $$a = 3;
+} lol {
+    $$a = 0;
+}
+} hahaha

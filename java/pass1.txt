@@ -1,0 +1,6 @@
+lecture {
+$ger x;
+$ger y;
+$$x + y = 0;
+$$$x / y = 1;
+} hahaha

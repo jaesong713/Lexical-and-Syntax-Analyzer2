@@ -1,0 +1,7 @@
+x + y = 1
+x = 1;
+y = 0;
+$ger lebron = 0;
+$ger kobe = 100
+championship;
+kobe - lebron = championship;

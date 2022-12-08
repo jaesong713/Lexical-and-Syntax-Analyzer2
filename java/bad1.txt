@@ -1,0 +1,9 @@
+class {
+$ger georgia
+$ state;
+$ university;
+$ georgia = 10;
+$ state = 0;
+$ university = 100;
+$$georgia + state + university = 0;
+} haha
