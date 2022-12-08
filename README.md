@@ -5,7 +5,7 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
         myMap.put("LETTER", 0);                 // letters
         myMap.put("DIGIT", 1);                  // any number
         myMap.put("UNKNOWN", 99);               // the unknown character
-        myMap.put("INT_LIT", 10);             // integers
+        myMap.put("INT_LIT", 10);               // integers
         myMap.put("FLOAT_LIT", 11);             // floating point numbers
         myMap.put("IDENT", 12);                 // identifiers
         myMap.put("ASSIGN_OP", 20);             // the assignment operation ( = )
@@ -113,5 +113,10 @@ Please refer to the syntax.java filein the java folder. Although, it might not b
 
 ## G.
 I have developed new test files within the java folder. 
-
+```
+pass1.txt - THIS IS AN OPTIMAL FILE
+secondPass.txt - THIS IS AN OPTIMAL FILE
+bad1.txt - THIS FILE WILL HAVE LEXICAL ERROR(S)
+secondBad.txt - THIS FILE WILL HAVE SYNTAX ERROR(S)
+```
 
