@@ -46,32 +46,29 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
 - MULDIVMOD -> '$$$' IDENT { (* | / | %) IDENT } ';'
 - IDENT -> 'id' | 'digit' | 'letter'
 - FACTOR -> 'int_lit' | 'float_int'
-- HA_STMT -> 'ha' `(`<bool_expr> `)` <stmt> [ `lol` <stmt> ]      ha = if stmt
-- <during_stmt> -> 'during' '(' BOOL_EXPR ')'  during = while stmt
-- <bool_expr> -> <b_eq>
-- <b_eq> -> [!]<b_fact> { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) <b_fact> }
-- <b_fact> -> `id` | `digit` | `letter`
-- <end> -> `hahaha`
+- HA_STMT -> 'ha' '(' BOOL_EXPR ')' STMT [ 'lol' STMT ]      ha = if stmt
+- DURING_STMT -> 'during' '(' BOOL_EXPR ')'  during = while stmt
+- BOOL_EXPR -> B_EQ
+- B_EQ -> [!]B_FACT { ( '==' | '!=' | '<=' | '<' | '>=' | '>' ) B_FACT }
+- B_FACT -> 'id' | 'digit' | 'letter'
+- END -> 'hahaha'
 
 ## Grammar Syntax Notation:
 - START: lecture BLOCK
 - BLOCK: { STMT } $END
 - STMT: ASSIGNMENT | LOOPING | ADDMINUS | MULDIVMOD
-- ASSIGNMENT: `$` FACTOR `;`
+- ASSIGNMENT: `$` FACTOR IDENT `;`
 - LOOPING: HA_STMT | DURING_STMT
-- ADDMINUS -> `$$` FACTOR { ( + | - | = ) FACTOR }
-- MULDIVMOD -> `$$$` FACTOR { ( * | / | % ) FACTOR }
-- FACTOR -> `id` | `int_lit` | `float_int` 
-- END -> hahaha
-
+- ADDMINUS -> `$$` IDENT { ( + | - | = ) IDENT }
+- MULDIVMOD -> `$$$` IDENT { ( * | / | % ) IDENT }
+- IDENT -> `id` | `digit` | `letter` 
+- FACTOR -> `int_lit` | `float_lit`
 - HA_STMT -> `ha` `(` BOOL_EXPR `)` STMT [ `lol` STMT ]     
 - DURING_STMT -> `during` `(` BOOL_EXPR `)` STMT                
-
 - BOOL_EXPR -> B_EQ    
-- B_EQ -> [`!`]B_EXPR { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) B_EXPR }
-- B_EXPR -> B_TERM { ( `+` | `-` ) B_TERM }
-- TERM -> NOT { ( `*` | `/` | `%` ) NOT }
-- B_FACT -> `id` | `int_lit` | `float_int` 
+- B_EQ -> [`!`]B_FACT { ( `==` | `!=` | `<=` | `<` | `>=` | `>` ) B_FACT }
+- B_FACT -> `id` | `digit` | `letter` 
+- END -> hahaha
 
 ## Legend: 
 ```
