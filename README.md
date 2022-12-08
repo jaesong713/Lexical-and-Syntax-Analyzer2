@@ -106,4 +106,12 @@ FIRST(END) -> {'hahaha'}
 ## D.
 
 ## E. 
-Please refer to the lexical.java file. The optimal scenario is for this program to read in my/your/his/her file and return the all lexemes and tokens according to the language that I have designed. It will also return errors if it does not recognize certain lexemes. To change through each file and see how it is implemented, simply change line 30 to your file of desire.
+Please refer to the lexical.java file in the java folder. The optimal scenario is for this program to read in my/your/his/her file and return the all lexemes and tokens according to the language that I have designed. It will also return errors if it does not recognize certain lexemes. To change through each file and see how it is implemented, simply change line 30 to your file of desire.
+
+## F.
+Please refer to the syntax.java filein the java folder. Although, it might not be optimal right now. It is set up to take in an array of tokens and process those tokens and then finally determine if the program follows the correct syntax. If not, it will throw an error.
+
+## G.
+I have developed new test files within the java folder. 
+
+
