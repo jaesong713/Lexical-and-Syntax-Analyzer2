@@ -112,7 +112,9 @@ Please refer to the lexical.java file in the java folder. The optimal scenario i
 Please refer to the syntax.java filein the java folder. Although, it might not be optimal right now. It is set up to take in an array of tokens and process those tokens and then finally determine if the program follows the correct syntax. If not, it will throw an error.
 
 ## G.
-I have developed new test files within the java folder. 
+I have developed new test files within the java folder. I apologize if the file names are not ideal but the type of files that they are will be listed below in the legend.
+
+## Test File Legend  
 ```
 pass1.txt - THIS IS AN OPTIMAL FILE
 secondPass.txt - THIS IS AN OPTIMAL FILE
@@ -120,3 +122,5 @@ bad1.txt - THIS FILE WILL HAVE LEXICAL ERROR(S)
 secondBad.txt - THIS FILE WILL HAVE SYNTAX ERROR(S)
 ```
 
+## H. 
+Please refer to partH.docx
