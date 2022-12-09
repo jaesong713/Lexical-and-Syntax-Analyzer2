@@ -47,7 +47,7 @@ The tokens are stored in a hash map corresponding to their respective qualifiers
 - IDENT -> 'id' | 'digit' | 'letter'
 - FACTOR -> 'int_lit' | 'float_int'
 - HA_STMT -> 'ha' '(' BOOL_EXPR ')' STMT [ 'lol' STMT ]      ha = if stmt
-- DURING_STMT -> 'during' '(' BOOL_EXPR ')'  during = while stmt
+- DURING_STMT -> 'during' '(' BOOL_EXPR ')' STMT during = while stmt
 - BOOL_EXPR -> B_EQ
 - B_EQ -> [!]IDENT { ( '==' | '!=' | '<=' | '<' | '>=' | '>' ) IDENT }
 - END -> 'hahaha'
